@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Interactive Portfolio 🍓</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body id="bg-image">
     <div id="logo-container">
       <img src="graphs/logo.png" alt="logo" id="logo" style="display:none;" />
     </div>
@@ -20,19 +20,14 @@
           <span class="prompt">$</span>
           <input type="text" id="terminal-input" autofocus placeholder="Type help to see the available commands" />
         </div>
-        
-        <div class="random-image">
-          <h2>Random Image</h2>
-          <button id="new-image-btn">New Image</button>
-          <img id="random-image" src="" alt="Random Image" />
-        </div>
       </div>
     </div>
+
     <div class="date-time">
       <div id="hour"></div>
       <div id="date"></div>
     </div>
-  
+
     <script src="script.js"></script>
   </body>
 </html>
