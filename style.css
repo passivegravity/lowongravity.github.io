@@ -13,13 +13,14 @@ a {
 
 
 body {
-  background-image: url("https://i.imgur.com/lhQGCuD.png");
+  
   background-size: cover;
   font-family: "Courier New", Courier, monospace;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  mask-repeat: no-repeat;
 
 }
 
