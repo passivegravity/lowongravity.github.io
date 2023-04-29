@@ -24,7 +24,7 @@ const consoleOutput = document.getElementById("consoleOutput");
 const logo = document.getElementById("logo");
 
 // List of image URLs to choose from
-const backgroundImages = [  "https://example.com/image1.jpg",  "https://example.com/image2.jpg",  "https://example.com/image3.jpg",  "https://example.com/image4.jpg",];
+const backgroundImages = [  "https://i.imgur.com/lhQGCuD.png",  "https://i.imgur.com/lhQGCuD.png",  "https://i.imgur.com/lhQGCuD.png",  "https://i.imgur.com/lhQGCuD.png",];
 
 // Get a random index from the array of images
 const randomIndex = Math.floor(Math.random() * backgroundImages.length);
