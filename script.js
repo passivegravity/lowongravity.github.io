@@ -1,3 +1,15 @@
+// Function to randomly load a background image
+function loadBackgroundImage() {
+  const images = ["summer.png", "forest.png", "parallax.png", "ghilbi1.jpg", "ghilbi2.jpg", "ghilbi3.jpg"];
+  const randomIndex = Math.floor(Math.random() * images.length);
+  const selectedImage = images[randomIndex];
+  document.body.style.backgroundImage = `url('images/${selectedImage}')`;
+}
+
+// Call the function to load a random background image
+loadBackgroundImage();
+
+// #time
 function updateTime() {
   let date = new Date();
   let hours = date.getHours();
@@ -23,18 +35,6 @@ const input = document.getElementById("terminal-input");
 const consoleOutput = document.getElementById("consoleOutput");
 const logo = document.getElementById("logo");
 
-// List of image URLs to choose from
-const backgroundImages = [  "https://i.imgur.com/lhQGCuD.png",  "https://i.imgur.com/lhQGCuD.png",  "https://i.imgur.com/lhQGCuD.png",  "https://i.imgur.com/lhQGCuD.png",];
-
-// Get a random index from the array of images
-const randomIndex = Math.floor(Math.random() * backgroundImages.length);
-
-// Set the background image
-document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
-
-
-
-
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -54,9 +54,19 @@ input.addEventListener("keydown", (e) => {
                                         <li>projects</li>
                                         <li>contact</li>
                                         <li>logo</li>
-                                        <li>Credits</li>
+                                        <li>credits</li>
+                                        <li>one command has been hidden.</li>
                                       </ul>`;
         break;
+        case "16092020":
+          consoleOutput.innerHTML += `<p>It is an important date.</p>
+          <ul>
+              <li>If you're the person that it is meant for,
+              firstly congrats on finding this hidden message,
+              and secondly, I hope you still remember me, contact me so I know you're fine!
+             </li>
+          </ul>`
+          break;
         case "about":
           consoleOutput.innerHTML += `<p>Information about me</p>
                                         <ul>
