@@ -23,6 +23,18 @@ const input = document.getElementById("terminal-input");
 const consoleOutput = document.getElementById("consoleOutput");
 const logo = document.getElementById("logo");
 
+// List of image URLs to choose from
+const backgroundImages = [  "https://example.com/image1.jpg",  "https://example.com/image2.jpg",  "https://example.com/image3.jpg",  "https://example.com/image4.jpg",];
+
+// Get a random index from the array of images
+const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+
+// Set the background image
+document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
+
+
+
+
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
