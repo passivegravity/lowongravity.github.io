@@ -1,9 +1,11 @@
 // Function to randomly load a background image
 function loadBackgroundImage() {
-  const images = ["summer.png", "forest.png", "parallax.png", "ghilbi1.jpg", "ghilbi2.jpg", "ghilbi3.jpg"];
+  const images = ["default.png", "ghilbi1.jpg", "ghilbi2.jpg", "ghilbi3.jpg", "ghilbi4.jpg","ghilbi5.jpg", "ghilbi5.jpg", "ghilbi6.jpg"];
   const randomIndex = Math.floor(Math.random() * images.length);
   const selectedImage = images[randomIndex];
-  document.body.style.backgroundImage = `url('images/${selectedImage}')`;
+  const body = document.body;
+  body.style.transition = "background-image 2s ease-in-out"; // Add CSS transition
+  body.style.backgroundImage = `url('images/${selectedImage}')`;
 }
 
 // Call the function to load a random background image
@@ -50,29 +52,16 @@ input.addEventListener("keydown", (e) => {
       case "help":
         consoleOutput.innerHTML += `<p>Available commands:</p>
                                       <ul>
-                                        <li>about</li>
-                                        <li>projects</li>
-                                        <li>contact</li>
-                                        <li>logo</li>
-                                        <li>credits</li>
-                                        <li>one command has been hidden.</li>
+                                      about, projects, idea,  background,  contact, credits, logo, party
+                                      
                                       </ul>`;
         break;
-        case "16092020":
-          consoleOutput.innerHTML += `<p>It is an important date.</p>
-          <ul>
-              <li>If you're the person that it is meant for,
-              firstly congrats on finding this hidden message,
-              and secondly, I hope you still remember me, contact me so I know you're fine!
-             </li>
-          </ul>`
-          break;
         case "about":
           consoleOutput.innerHTML += `<p>Information about me</p>
                                         <ul>
-                                            <li>I'm Simon, a young and experienced developer.</li>
-                                            <li>Currently all of my projects are made for my personal satisfaction.</li>
-                                            <li>See you soon. . . </li>
+                                            I'm Simon, a young and experienced developer.
+                                            Currently all of my projects are made for my personal satisfaction, 
+                                            If there's something you want to talk about, I'm always available!
                                         </ul>
           
           `;
@@ -84,6 +73,7 @@ input.addEventListener("keydown", (e) => {
                                            <li><a href="https://github.com/LowOnGravity/TempCleaner">TempCleaner</a></li>
                                            <li><a href="https://github.com/LowOnGravity/KoGaMa">KoGaMa Addons & Themes</a></li>
                                            <li><a href="https://github.com/LowOnGravity/DiscordProfileDecorations">Discord Profile Decorations</a></li>
+                                                More projects coming soon. . . 
                                          </ul>`;
             break;
         case "contact":
@@ -99,7 +89,7 @@ input.addEventListener("keydown", (e) => {
           <ul>
             <li>Visuals: Corydon </li>
             <li>Hosting: NotAbby </li>
-            <li>Coding: Simon </li>
+            
         </ul>`
 
 
@@ -112,6 +102,26 @@ input.addEventListener("keydown", (e) => {
           logo.style.display = "none";
         }
         break;
+        case "background":
+      loadBackgroundImage(true);
+      break;
+      case "party":
+        consoleOutput.innerHTML +=  ` <p> To stop this command refresh website. </p>`
+        rainbowText(true);
+      break;
+        case "idea":
+          consoleOutput.innerHTML +=  ` I'm currently working on a few projects, but if there's something that you'd like me to make
+          you can contact me here: aaav#0023`
+      break;
+      case "16092020":
+        consoleOutput.innerHTML += `<p>It is an important date.</p>
+        <ul>
+            <li>If you're the person that it is meant for,
+            firstly congrats on finding this hidden message,
+            and secondly, I hope you still remember me, contact me so I know you're fine!
+           </li>
+        </ul>`
+        break;
       default:
         consoleOutput.innerHTML += `<p>${command}: command not found</p>`;
         break;
@@ -121,4 +131,45 @@ input.addEventListener("keydown", (e) => {
     }
     window.scrollTo(0, document.body.scrollHeight);
   }
+  let rainbowInterval;
+
+function rainbowText() {
+  const allTextElements = document.querySelectorAll("body *");
+
+  rainbowInterval = setInterval(() => {
+    allTextElements.forEach((element) => {
+      element.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      element.style.transition = "color 0.5s ease";
+    });
+  }, 100);
+}
+
+function disableRainbowText() {
+  clearInterval(rainbowInterval);
+  const allTextElements = document.querySelectorAll("body *");
+  allTextElements.forEach((element) => {
+    element.style.color = "";
+    element.style.transition = "";
+  });
+}
+
+function handleCommand(input) {
+  const command = input.toLowerCase().trim();
+
+  switch (command) {
+    case "party":
+      rainbowText();
+      setTimeout(() => {
+        disableRainbowText();
+      }, 5000);
+      break;
+    // other commands
+    default:
+      // default message
+      break;
+  }
+}
+  
+
+
 });
