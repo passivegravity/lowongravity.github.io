@@ -69,11 +69,10 @@ input.addEventListener("keydown", (e) => {
           case "projects":
             consoleOutput.innerHTML += `<p>Check out my projects:</p>
                                          <ul>
-                                           <li><a href="https://github.com/LowOnGravity/FriendScraper">Discord Friend Scraper</a></li>
-                                           <li><a href="https://github.com/LowOnGravity/TempCleaner">TempCleaner</a></li>
+                                              <li><a href="https://lowongravity.github.io/songshuffle/r">New & Comfy Website for Spotify API</a></li>                                          
+                                            <li><a href="https://github.com/LowOnGravity/FriendScraper">Discord Friend Scraper</a></li>
                                            <li><a href="https://github.com/LowOnGravity/KoGaMa">KoGaMa Addons & Themes</a></li>
-                                           <li><a href="https://github.com/LowOnGravity/DiscordProfileDecorations">Discord Profile Decorations</a></li>
-                                                More projects coming soon. . . 
+                                               
                                          </ul>`;
             break;
         case "contact":
